@@ -1,0 +1,156 @@
+html {
+    background: ;
+    background-image: linear-gradient(270deg, rgb(230, 233, 233) 0%, rgb(216, 221, 221) 100%);
+    -webkit-font-smoothing: antialiased;
+
+}
+
+@font-face{
+    src: url(Ailerons-Regular.otf);
+    font-family:tseries;
+}
+body {
+    margin:0;
+      background-image:url(http://backgroundcheckall.com/wp-content/uploads/2017/12/red-banner-background-design-9.jpg)
+
+  
+ 
+}
+.box{
+    padding: 150px 0 0 0;
+  
+}
+header{
+    background:
+    color: white;
+    padding:
+    display: inline;
+    font-family: tseries;
+    letter-spacing: 1px;
+    font-size: 50px;
+    font-stretch:;
+}
+
+header h1{
+    
+    margin: 0;
+    padding: 0 0 0 15px;
+    display: inline;
+    font-size:100px;
+    font-stretch:expanded;
+    font-weight: 600;
+    
+
+}
+nav ul{
+    margin:0;
+    display: inline
+    
+}
+nav ul a {
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li{
+    background: black;
+    color: white;
+    display: inline-block;
+    list-style-type: none;
+    padding: 5px 40px;
+    margin:10px 2%
+    
+}
+main{
+    background: white;
+    margin-bottom: 0;
+}
+
+main h2{
+    font-family: tseries;
+    font-size: 45px;
+    position: relative;
+    margin-left: 20px;
+    letter-spacing: 1px;
+
+    
+}
+.videowrapper{
+    background: white;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25%;
+    margin: 0 50px;
+
+  
+}
+
+.videowrapper iframe{
+    position:absolute;
+    left:0px;
+    top:0;
+    right:0px;
+    bottom:0;
+    height:75%;
+    width:100%;
+}
+
+
+
+txt{
+    position:sticky;
+
+    
+}
+ txt h2{
+     background: red;
+    text-align: center;
+    position:absolute;
+    top:50%;
+     left:50%;
+     transform: translateX(+230%) translateY(-140%);
+     font-size: 200;
+     
+     
+    
+}
+txt h2 a{
+    background:black;
+    text-decoration: none;
+    color:white;
+}
+div {
+    background: white;
+}
+.wrapper div{
+    margin 0;
+    width:1000px;
+    background:white;
+}
+
+.img1 {
+    width: 1300px;
+    padding: 60px;
+    padding-top: 10px;
+}
+
+div h2{
+    font-family: tseries;
+    font-size: 45px;
+    position: relative;
+    margin-left: 55px;
+    letter-spacing: 1px;
+    padding-top: 50px;
+    padding-bottom: 0;
+}
+
+div h3{
+     font-family: tseries;
+    font-size: 20px;
+    position: relative;
+    text-align: center;
+    padding-bottom: 0;
+    background: red;
+    color: white;
+ }
+    
