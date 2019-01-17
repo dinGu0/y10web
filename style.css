@@ -1,0 +1,72 @@
+body, div, h1{
+    margin: 0;
+    padding: 0;
+    border:0;
+}
+
+@font-face{
+    src: url(Ailerons-Regular.otf);
+    font-family:tseries;
+}
+
+body{
+    text-align: center;
+    font-family: tseries;
+}
+
+header{
+    height: 100px;
+    background:black;
+    width:100%;
+    z-index: 10;
+    position: fixed;
+    top:0px;
+    color:white;
+    font-size: 150%;
+    
+    
+}
+
+# container{
+    margin: 0;
+    padding: 0;
+    border:0;
+}
+
+
+#banner{
+    width:100%;
+    height: 500px;
+    position: fixed;
+    top:100px;
+    background: #707070;
+    background-image:url(https://073bddbe7aa062defd37fde3-cwzdvdpfea.netdna-ssl.com/wp-content/uploads/2017/05/cloud-computing-logistics-2017-1000x640.jpg);
+    color: white;
+    align-items: center;
+    background-position: 50%;
+    
+    
+    
+}
+
+#content{
+    width:100%;
+    position: relative;
+    top:560px;
+    background: #ebebeb;
+    height:100%;
+    background: black;
+    color:white;
+    border: 0% 50%;
+    
+}
+
+h4{
+    width:50%;
+    text-align: center;
+    left:25%;
+    vertical-align: middle;
+    display: block;
+    position: relative;
+    margin-bottom: 75px;
+}
