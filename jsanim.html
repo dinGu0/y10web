@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="bruh.css">
+  </head>
+  <body>
+
+
+
+
+  <script type="text/javascript">
+    document.onmousemove = function(){
+      var elm = document.createElement("div");
+      elm.style.top = event.clientY + "px";
+      elm.style.left = event.clientX + "px";
+      elm.style.background = randomColor();
+      elm.setAttribute("class","circle");
+      document.body.appendChild(elm);
+
+      setTimeout(function(){document.body.removeChild(elm);},2000);
+    }
+
+    function randomColor(){
+      var s = "0123456789abcdef";
+      var color = "#";
+      for(i=0;i<6;i++){
+        color+=s[Math.floor(Math.random()*s.length)];
+      }
+      return color;
+    }
+  </script>
+  </body>
+</html>
