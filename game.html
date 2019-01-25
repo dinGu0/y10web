@@ -15,7 +15,7 @@
        } 
     Fire.prototype.draw = function(){
         context.beginPath();
-        context.fillStyle="red";
+        context.fillStyle="blue";
         context.arc(this.x,this.y,10,0,2*Math.PI);
         context.fill();
         context.closePath();
@@ -52,12 +52,12 @@ function Tank(x,y){
         context.translate(this.x, this.y);
         context.rotate(this.angle);
 
-        context.fillStyle = 'green';
+        context.fillStyle = 'blue';
         context.beginPath();
         context.arc(0,0,30,0,2*Math.PI);
         context.fill();
 
-        context.fillStyle = "red";
+        context.fillStyle = "grey";
         context.fillRect(0,-10,50,20);
 
         context.restore();
@@ -84,7 +84,7 @@ function Tank(x,y){
 }
     
     Tank.prototype.fire = function(){
-       var dx = Math.cos(this.angle);
+        var dx = Math.cos(this.angle);
         var dy = Math.sin(this.angle);
         var f = new Fire(this.x, this.y, dx, dy);
         this.fires.push(f);
