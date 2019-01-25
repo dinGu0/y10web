@@ -1,0 +1,175 @@
+<html>
+    <head>
+        <title> Bruh</title>
+        
+        
+    
+        
+    <script>
+       function Fire(x, y, dx, dy){
+           this.speed = 10;
+           this.x = x;
+           this.y = y;
+           this.dx = dx + this.speed;
+           this.dy = dy + this.speed;
+       } 
+    Fire.prototype.draw = function(){
+        context.beginPath();
+        context.fillStyle="red";
+        context.arc(this.x,this.y,10,0,2*Math.PI);
+        context.fill();
+        context.closePath();
+        
+    }
+    Fire.prototype.update = function(){
+        this.x += this.dx;
+        this.y += this.dy;
+        if(this.x <0 || this.x >canvas.width || this.y < 0 || this.y > canvas.height)
+            return false;
+        return true;
+    }
+        
+        
+    </script>
+        
+        
+        
+        
+        
+    <script >
+        
+        
+function Tank(x,y){
+    this.x = x;
+    this.y = y;
+    this.angle;
+    this.v = 5;
+    this.fires = [];
+}
+
+    Tank.prototype.draw = function(){
+        context.save();
+        context.translate(this.x, this.y);
+        context.rotate(this.angle);
+
+        context.fillStyle = 'green';
+        context.beginPath();
+        context.arc(0,0,30,0,2*Math.PI);
+        context.fill();
+
+        context.fillStyle = "red";
+        context.fillRect(0,-10,50,20);
+
+        context.restore();
+        
+        for (var i = 0; i < this.fires.length; i ++)
+            this.fires[i].draw();
+    }
+
+    Tank.prototype.update = function(input, mouseX, mouseY){
+        if (input.left)this.x = this.x - this.v;
+        if(input.right) this.x = this.x + this.v;
+        if(input.up) this.y = this.y - this.v;
+        if(input.down)this.y = this.y + this.v;
+        
+        var dx = mouseX - this.x;
+        var dy = mouseY - this.y;
+        
+        this.angle = Math.atan2(dy, dx);
+        
+        for (var i=0; i <this.fires.length; i ++)
+            if(!this.fires[i].update()){
+                this.fires.splice(i,1);
+            }
+}
+    
+    Tank.prototype.fire = function(){
+       var dx = Math.cos(this.angle);
+        var dy = Math.sin(this.angle);
+        var f = new Fire(this.x, this.y, dx, dy);
+        this.fires.push(f);
+    }
+        
+        
+        
+        </script>
+      
+        
+        <script>
+            function Input(){
+                this.left = false;
+                this.right = false;
+                this.up = false;
+                this.down = false;
+            }
+            
+            Input.prototype.set = function(evt, bool){
+                switch(evt.keyCode){
+                    case 87: this.up = bool; break;
+                    case 83: this.down = bool; break;
+                    case 65: this.left = bool;break;
+                    case 68: this.right = bool;break;
+                }
+            }
+        
+        </script>
+    </head>
+    <body>
+        <canvas id = 'canvas' style = 'border:1px solid #ccc' width = '700' height = '500' tabindex="1"></canvas>
+        
+        <script>
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        var mouseX, mouseY;
+            
+        var tank = new Tank(350,250);
+        var input = new Input();
+            
+        canvas.addEventListener('mousemove',mouseMove);
+        canvas.addEventListener('mousedown', mouseDown);
+        canvas.addEventListener('keydown', keyDown);
+        canvas.addEventListener("keyup", keyUp);
+            
+        function mouseMove(evt){
+            mouseX = evt.x;
+            mouseY = evt.y;
+        }
+            
+        var tank = new Tank(350,250)
+        function gameLoop(){
+            
+            context.clearRect(0,0,canvas.width,canvas.height);
+            tank.draw();
+            tank.update(input, mouseX, mouseY);
+            console.log(tank.fires.length);
+            
+            
+        }
+            
+            
+        setInterval(gameLoop,20);
+            
+        function mouseDown(evt){
+            tank.fire();
+        }
+            
+       function keyDown(evt){
+	        input.set(evt, true);
+       }
+    
+        function keyUp(evt){
+            input.set(evt,false);
+        }
+            
+            
+            
+        
+        
+        
+        
+        
+        </script>
+    </body>
+
+
+</html>
